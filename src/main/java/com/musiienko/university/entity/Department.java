@@ -24,7 +24,7 @@ import java.util.Objects;
  * (or, maybe, even impossible) with <b>@GeneratedValue</b>.</li>
  * </ul>
  */
-@Table(name = "departments", schema = "university")
+@Table(name = "departments")
 @Entity
 @Getter
 @Setter

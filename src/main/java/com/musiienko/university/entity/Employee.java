@@ -27,7 +27,7 @@ import java.util.Objects;
  * </ul>
  */
 @Entity
-@Table(name = "employees", schema = "university")
+@Table(name = "employees")
 @Getter
 @Setter
 @ToString

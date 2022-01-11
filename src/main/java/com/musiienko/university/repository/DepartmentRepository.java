@@ -41,6 +41,6 @@ public interface DepartmentRepository extends CrudRepository<Department, Integer
     Optional<BigDecimal> getAverageSalaryForName(String departmentName);
 
     @Query("SELECT count(e) FROM Employee e JOIN e.departments d WHERE d.name=?1")
-    Optional<Long> getEmployeeNumberForName(String departmentName);
+    Long getEmployeeNumberForName(String departmentName);
 
 }

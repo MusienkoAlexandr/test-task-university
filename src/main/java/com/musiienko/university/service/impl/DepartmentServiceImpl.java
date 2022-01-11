@@ -42,9 +42,9 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public String getNumberOfEmployeesByDepartmentName(String departmentName) {
-        return departmentRepository.getEmployeeNumberForName(departmentName).map(
-                        (n) -> String.format(GET_NUMBER_OF_EMPLOYEES_ANSWER_POSITIVE_PATTERN, departmentName, n))
-                .orElse(String.format(GENERIC_ANSWER_NEGATIVE_PATTERN, departmentName));
+        Long count = departmentRepository.getEmployeeNumberForName(departmentName);
+        if (count > 0) return String.format(GET_NUMBER_OF_EMPLOYEES_ANSWER_POSITIVE_PATTERN, departmentName, count);
+        else return String.format(GENERIC_ANSWER_NEGATIVE_PATTERN, departmentName);
     }
 
     @Override
