@@ -14,6 +14,6 @@ public class TestTaskUniversityApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        System.out.println("Will the Real Slim Shady, please, stand up?");
+        System.out.println("Hello World!");
     }
 }

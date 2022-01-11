@@ -10,4 +10,8 @@ import lombok.Value;
 public class EmployeeCredentialsDTO {
     String firstName;
     String lastName;
+
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
 }
