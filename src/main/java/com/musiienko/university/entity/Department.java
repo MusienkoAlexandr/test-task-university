@@ -1,4 +1,4 @@
-package com.musiienko.testtaskuniversity.entity;
+package com.musiienko.university.entity;
 
 import lombok.*;
 import org.hibernate.Hibernate;

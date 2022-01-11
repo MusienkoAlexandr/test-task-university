@@ -1,4 +1,4 @@
-package com.musiienko.testtaskuniversity.entity;
+package com.musiienko.university.entity;
 
 import lombok.*;
 import org.hibernate.Hibernate;
@@ -40,7 +40,7 @@ public class Employee {
     @ToString.Exclude
     private List<Department> departments;
 
-    enum Degree {
+    public enum Degree {
         ASSISTANT, ASSOCIATE_PROFESSOR, PROFESSOR
     }
 
