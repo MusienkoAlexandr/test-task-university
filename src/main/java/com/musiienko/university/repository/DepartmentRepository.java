@@ -12,15 +12,21 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Repository, containing operations, related to Department entity:
- * - find head of the department by name;
- * - get statistics (number of employees of each degree) for the department by name;
- * - get average salary for the department by name;
- * - get employee number for the department by name.
- * As the application is not using any default CrudRepository-methods and
- * every custom method returns DTO-object - inheriting from CrudRepository,
- * parameterised with the Department class, is more for hypothetical further scaling
+ * <p>
+ * Repository, containing operations, related to <b>Department</b> entity:
+ * </p>
+ * <ul>
+ * <li>find head of the department by name;</li>
+ * <li>get statistics (number of employees of each degree) for the department by name;</li>
+ * <li>get average salary for the department by name;</li>
+ * <li>get employee number for the department by name.</li>
+ * </ul>
+ * <p>
+ * As the application is not using any default <b>CrudRepository</b>-methods and
+ * every custom method returns DTO-object - inheriting from <b>CrudRepository</b>,
+ * parameterised with the <b>Department</b> class, is more for hypothetical further scaling
  * and logical integrity of the application.
+ * </p>
  */
 @Repository
 public interface DepartmentRepository extends CrudRepository<Department, Integer> {

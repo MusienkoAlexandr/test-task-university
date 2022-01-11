@@ -1,12 +1,21 @@
 package com.musiienko.university.service;
 
+import com.musiienko.university.controller.ConsoleRequest;
+
 /**
- * Service for Employee operations:
- * - search employee by string pattern in credentials.
+ * <p>
+ * Service for <b>Employee</b> operations:
+ * </p>
+ * <ul>
+ * <li>search employee by string pattern in credentials.</li>
+ * </ul>
+ * <p>
  * All the data, retrieved from the database,
- * is processed to the specific String-format
+ * is processed to the specific <b>String</b>-format
  * of the response, that is further passed to the view layer.
+ * </p>
  */
-public interface EmployeeService {
+public interface EmployeeService extends GenericService {
+    @ConsoleRequest("Global search by {template}")
     String searchByStringPattern(String pattern);
 }

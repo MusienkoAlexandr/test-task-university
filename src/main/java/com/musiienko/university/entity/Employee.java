@@ -10,13 +10,21 @@ import java.util.Objects;
 
 
 /**
- * Entity, representing Employee information:
- * First name, last name, salary, degree and departments.
- * Not using @GeneratedValue for @Id field due to next reasons:
- * - application is not updating tables' fields in database;
- * - for initializing database with data we use data.sql, so filling
+ * <p>
+ * Entity, representing Department information:
+ * </p>
+ * <p>
+ * First name, last name, degree, salary and departments.
+ * </p>
+ * <p>
+ * Not using <b>@GeneratedValue</b> for <b>@Id</b> field due to next reasons:
+ * </p>
+ * <ul>
+ * <li>application is not updating tables' fields in database;</li>
+ * <li>for initializing database with data we use data.sql, so filling
  * fields with ids in "join"-columns is unnecessary difficult
- * (or, maybe, even impossible) with @GeneratedValue.
+ * (or, maybe, even impossible) with <b>@GeneratedValue</b>.</li>
+ * </ul>
  */
 @Entity
 @Table(name = "employees", schema = "university")

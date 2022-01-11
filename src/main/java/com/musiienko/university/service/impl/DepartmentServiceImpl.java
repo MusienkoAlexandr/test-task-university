@@ -4,11 +4,11 @@ import com.musiienko.university.entity.dto.DepartmentStatisticsElementDTO;
 import com.musiienko.university.repository.DepartmentRepository;
 import com.musiienko.university.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 public class DepartmentServiceImpl implements DepartmentService {
     private static final String FIND_HEAD_ANSWER_POSITIVE_PATTERN = "Head of %s department is %s";
     private static final String GET_STATISTICS_ANSWER_POSITIVE_PATTERN = "Statistics of the department %s:\n" +
@@ -26,8 +26,8 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public String findHeadByDepartmentName(String departmentName) {
         return departmentRepository.findHeadForName(departmentName).map(
-                (cr) ->  String.format(FIND_HEAD_ANSWER_POSITIVE_PATTERN, departmentName,
-                        cr.getFullName()))
+                        (cr) -> String.format(FIND_HEAD_ANSWER_POSITIVE_PATTERN, departmentName,
+                                cr.getFullName()))
                 .orElse(String.format(GENERIC_ANSWER_NEGATIVE_PATTERN, departmentName));
 
     }
@@ -43,14 +43,14 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public String getNumberOfEmployeesByDepartmentName(String departmentName) {
         return departmentRepository.getEmployeeNumberForName(departmentName).map(
-                (n) ->  String.format(GET_NUMBER_OF_EMPLOYEES_ANSWER_POSITIVE_PATTERN, departmentName, n))
+                        (n) -> String.format(GET_NUMBER_OF_EMPLOYEES_ANSWER_POSITIVE_PATTERN, departmentName, n))
                 .orElse(String.format(GENERIC_ANSWER_NEGATIVE_PATTERN, departmentName));
     }
 
     @Override
     public String getAverageSalaryByDepartmentName(String departmentName) {
         return departmentRepository.getAverageSalaryForName(departmentName).map(
-                (avg) ->  String.format(GET_AVERAGE_SALARY_ANSWER_POSITIVE_PATTERN, departmentName, avg))
+                        (avg) -> String.format(GET_AVERAGE_SALARY_ANSWER_POSITIVE_PATTERN, departmentName, avg))
                 .orElse(String.format(GENERIC_ANSWER_NEGATIVE_PATTERN, departmentName));
     }
 }

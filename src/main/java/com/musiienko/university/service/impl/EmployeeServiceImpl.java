@@ -4,11 +4,11 @@ import com.musiienko.university.entity.dto.EmployeeCredentialsDTO;
 import com.musiienko.university.repository.EmployeeRepository;
 import com.musiienko.university.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 public class EmployeeServiceImpl implements EmployeeService {
 
     private static final String SEARCH_ANSWER_NEGATIVE_PATTERN = "No results found.";
@@ -20,7 +20,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public String searchByStringPattern(String pattern) {
-        List<EmployeeCredentialsDTO> results = employeeRepository.findByPattern(pattern);
+        List<EmployeeCredentialsDTO> results = employeeRepository.findUsingPattern(pattern);
         if (results.isEmpty()) return SEARCH_ANSWER_NEGATIVE_PATTERN;
         StringBuilder answer = new StringBuilder("Results: ");
         answer.append(results.get(0).getFullName());
